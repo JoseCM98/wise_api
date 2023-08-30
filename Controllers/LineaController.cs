@@ -22,7 +22,7 @@ namespace wise_api.Controllers
         }
  
         [HttpGet]
-        public IActionResult GetClientes()
+        public IActionResult GetLinea()
         {
 
 
@@ -32,7 +32,7 @@ namespace wise_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostClientes([FromBody] LineaDto model)
+        public IActionResult PostLinea([FromBody] LineaDto model)
         {
             Linea linea = new Linea();
 
@@ -53,7 +53,7 @@ namespace wise_api.Controllers
 
         }
         [HttpPut]
-        public IActionResult PutClientes( [FromBody] Linea model)
+        public IActionResult PutLinea( [FromBody] Linea model)
         {
 
             var oldlinea = _context.Linea.Find(model.CodigoLinea);
@@ -88,5 +88,14 @@ namespace wise_api.Controllers
         //    return Ok("Se ha eliminado el cliente");
 
         //}
+
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteLinea(string id)
+        {
+
+            return Ok("Se ha eliminado el el nombre");
+
+        }
     }
 }
