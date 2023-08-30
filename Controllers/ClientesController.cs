@@ -41,33 +41,33 @@ namespace wise_api.Controllers
             return Ok(newclient);
 
         }
-        [HttpPut("{id}")]
-        public IActionResult PutClientes(string id,[FromBody] ClienteDto model)
-        {
-            var oldclient = clientes.Find(x => x.id == id);
-            if(oldclient == null)
-            {
-                return BadRequest("No existe el cliente");
-            }
-            oldclient.name = model.name;
-            oldclient.lastname = model.lastname;
-            oldclient.age = model.age;
+        //[HttpPut("{id}")]
+        //public IActionResult PutClientes(string id,[FromBody] ClienteDto model)
+        //{
+        //    var oldclient = clientes.Find(x => x.id == id);
+        //    if(oldclient == null)
+        //    {
+        //        return BadRequest("No existe el cliente");
+        //    }
+        //    oldclient.name = model.name;
+        //    oldclient.lastname = model.lastname;
+        //    oldclient.age = model.age;
 
-            return Ok(oldclient);
+        //    return Ok(oldclient);
 
-        }
+        //}
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteClientes(string id)
-        {
-            var client = clientes.Find(x => x.id == id);
-            if (client == null)
-            {
-                return BadRequest("No existe el cliente");
-            }
-            clientes.Remove(client);
-            return Ok("Se ha eliminado el cliente");
+        //[HttpDelete("{id}")]
+        //public IActionResult DeleteClientes(string id)
+        //{
+        //    var client = clientes.Find(x => x.id == id);
+        //    if (client == null)
+        //    {
+        //        return BadRequest("No existe el cliente");
+        //    }
+        //    clientes.Remove(client);
+        //    return Ok("Se ha eliminado el cliente");
 
-        }
+        //}
     }
 }

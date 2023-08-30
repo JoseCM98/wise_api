@@ -68,21 +68,21 @@ namespace wise_api.Controllers
         
 
         }
-        [HttpPut("{id}")]
-        public IActionResult PutBackNamesState(string id, [FromBody] ClienteDto model)
-        {
+        //[HttpPut("{id}")]
+        //public IActionResult PutBackNamesState(string id, [FromBody] ClienteDto model)
+        //{
 
 
-            return Ok("Editado");
+        //    return Ok("Editado");
 
-        }
+        //}
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteBakcNamesStaate(string id)
-        {
+        //[HttpDelete("{id}")]
+        //public IActionResult DeleteBakcNamesStaate(string id)
+        //{
 
-            return Ok("Se ha eliminado el el nombre");
+        //    return Ok("Se ha eliminado el el nombre");
 
-        }
+        //}
     }
 }

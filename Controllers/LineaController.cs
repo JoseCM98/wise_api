@@ -52,29 +52,29 @@ namespace wise_api.Controllers
             return Ok(linea);
 
         }
-        [HttpPut]
-        public IActionResult PutLinea( [FromBody] Linea model)
-        {
+        //[HttpPut]
+        //public IActionResult PutLinea( [FromBody] Linea model)
+        //{
 
-            var oldlinea = _context.Linea.Find(model.CodigoLinea);
-            if (oldlinea == null)
-            {
-                return BadRequest("No existe el cliente");
-            }
-            oldlinea.IdEmpresa = model.IdEmpresa;
-            oldlinea.NombreLinea = model.NombreLinea;
-            oldlinea.AbreviadoLinea = model.AbreviadoLinea;
-            oldlinea.PresupuestoLinea = model.PresupuestoLinea;
-            oldlinea.ActivaLinea = model.ActivaLinea;
-            oldlinea.VentaLinea = model.VentaLinea;
-            oldlinea.IdEAN13 = model.IdEAN13;
-            oldlinea.UsuariosLinea = model.UsuariosLinea;
+        //    var oldlinea = _context.Linea.Find(model.CodigoLinea);
+        //    if (oldlinea == null)
+        //    {
+        //        return BadRequest("No existe el cliente");
+        //    }
+        //    oldlinea.IdEmpresa = model.IdEmpresa;
+        //    oldlinea.NombreLinea = model.NombreLinea;
+        //    oldlinea.AbreviadoLinea = model.AbreviadoLinea;
+        //    oldlinea.PresupuestoLinea = model.PresupuestoLinea;
+        //    oldlinea.ActivaLinea = model.ActivaLinea;
+        //    oldlinea.VentaLinea = model.VentaLinea;
+        //    oldlinea.IdEAN13 = model.IdEAN13;
+        //    oldlinea.UsuariosLinea = model.UsuariosLinea;
 
-            _context.SaveChanges();
+        //    _context.SaveChanges();
             
-            return Ok(oldlinea);
+        //    return Ok(oldlinea);
 
-        }
+        //}
 
         //[HttpDelete("{id}")]
         //public IActionResult DeleteClientes(string id)
@@ -90,12 +90,12 @@ namespace wise_api.Controllers
         //}
 
 
-        [HttpDelete("{id}")]
-        public IActionResult DeleteLinea(string id)
-        {
+        //[HttpDelete("{id}")]
+        //public IActionResult DeleteLinea(string id)
+        //{
 
-            return Ok("Se ha eliminado el el nombre");
+        //    return Ok("Se ha eliminado el el nombre");
 
-        }
+        //}
     }
 }
