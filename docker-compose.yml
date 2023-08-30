@@ -1,0 +1,33 @@
+version: '3.8'
+
+mysql_wise:
+  image: mysql
+  build:
+    context: ./configMysqls/ConfigMysqlWise
+  command: --lower_cas_table_name=1
+  restart: always
+  enviroment:
+    MYSQL_DATABASE: basewise
+    MYSQL_USER: basewise
+    MYSQL_PASSWORD: 1234
+    MYSQL_ROOT_PASSWORD: 1234
+    TZ: America/Guayaquil
+  ports:
+    -target: 3306
+     published: 3307
+     protocol: tcp
+     mode: ingress
+    -3307:3306
+  deploy: 
+    mode: replicated
+    replicas: 1
+    endpoint_mode: vip
+    resources:
+      limits:
+        cpus: '3'
+        memory: 3G
+      reservations:
+        cpues: '3'
+        memory: 2G
+  volumes:
+  - ./datawise:/var/lib/mysql

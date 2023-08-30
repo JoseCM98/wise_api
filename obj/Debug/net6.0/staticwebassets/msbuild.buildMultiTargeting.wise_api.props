@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\wise_api.props" />
+</Project>
