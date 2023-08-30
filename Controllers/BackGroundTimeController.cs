@@ -18,7 +18,7 @@ namespace wise_api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetClientes()
+        public IActionResult GetBackTime()
         {
 
 
@@ -35,7 +35,7 @@ namespace wise_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostClientes([FromBody] BackGroundTime model)
+        public IActionResult PostBackTime([FromBody] BackGroundTime model)
         {
             BackGroundTime newback = new BackGroundTime();
             newback.Id = Guid.NewGuid().ToString(); 
@@ -69,5 +69,22 @@ namespace wise_api.Controllers
         //    return Ok(oldlinea);
 
         //}
+
+        [HttpPut("{id}")]
+        public IActionResult PutBackTime(string id, [FromBody] ClienteDto model)
+        {
+
+
+            return Ok("Editado");
+
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBakcTime(string id)
+        {
+
+            return Ok("Se ha eliminado el el nombre");
+
+        }
     }
 }

@@ -67,5 +67,21 @@ namespace wise_api.Controllers
             return Ok(historyList);
 
         }
+        [HttpPut("{id}")]
+        public IActionResult PutBackNames(string id, [FromBody] ClienteDto model)
+        {
+            
+
+            return Ok("Editado");
+
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBakcNames(string id)
+        {
+           
+            return Ok("Se ha eliminado el el nombre");
+
+        }
     }
 }
