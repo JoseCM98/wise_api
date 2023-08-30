@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IiAIyP8hPCxjCJXPjUcYpUe9fRhM2HDQGwQtLBmVn9g=",
+  "Source": "wise_api",
+  "BasePath": "_content/wise_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
