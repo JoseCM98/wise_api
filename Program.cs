@@ -37,6 +37,7 @@ app.UseSwaggerUI(c =>
     c.InjectStylesheet("/swagger-ui/custom.css");
 });
 
+app.UseCors(AllowAll);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

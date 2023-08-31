@@ -48,43 +48,43 @@ namespace wise_api.Controllers
             return Ok(newback);
 
         }
-        //[HttpPut]
-        //public IActionResult PutClientes([FromBody] Linea model)
-        //{
-        //    var oldlinea = _context.Linea.Find(model.CodigoLinea);
-        //    if (oldlinea == null)
-        //    {
-        //        return BadRequest("No existe el cliente");
-        //    }
-        //    oldlinea.IdEmpresa = model.IdEmpresa;
-        //    oldlinea.NombreLinea = model.NombreLinea;
-        //    oldlinea.AbreviadoLinea = model.AbreviadoLinea;
-        //    oldlinea.PresupuestoLinea = model.PresupuestoLinea;
-        //    oldlinea.ActivaLinea = model.ActivaLinea;
-        //    oldlinea.VentaLinea = model.VentaLinea;
-        //    oldlinea.IdEAN13 = model.IdEAN13;
-        //    oldlinea.UsuariosLinea = model.UsuariosLinea;
+        [HttpPut]
+        public IActionResult PutClientes([FromBody] Linea model)
+        {
+            var oldlinea = _context.Linea.Find(model.CodigoLinea);
+            if (oldlinea == null)
+            {
+                return BadRequest("No existe el cliente");
+            }
+            oldlinea.IdEmpresa = model.IdEmpresa;
+            oldlinea.NombreLinea = model.NombreLinea;
+            oldlinea.AbreviadoLinea = model.AbreviadoLinea;
+            oldlinea.PresupuestoLinea = model.PresupuestoLinea;
+            oldlinea.ActivaLinea = model.ActivaLinea;
+            oldlinea.VentaLinea = model.VentaLinea;
+            oldlinea.IdEAN13 = model.IdEAN13;
+            oldlinea.UsuariosLinea = model.UsuariosLinea;
 
-        //    _context.SaveChanges();
-        //    return Ok(oldlinea);
+            _context.SaveChanges();
+            return Ok(oldlinea);
 
-        //}
+        }
 
-        //[HttpPut("{id}")]
-        //public IActionResult PutBackTime(string id, [FromBody] ClienteDto model)
-        //{
+        [HttpPut("{id}")]
+        public IActionResult PutBackTime(string id, [FromBody] ClienteDto model)
+        {
 
 
-        //    return Ok("Editado");
+            return Ok("Editado");
 
-        //}
+        }
 
-        //[HttpDelete("{id}")]
-        //public IActionResult DeleteBakcTime(string id)
-        //{
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBakcTime(string id)
+        {
 
-        //    return Ok("Se ha eliminado el el nombre");
+            return Ok("Se ha eliminado el el nombre");
 
-        //}
+        }
     }
 }
