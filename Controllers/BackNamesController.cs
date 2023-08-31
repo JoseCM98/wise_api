@@ -31,14 +31,16 @@ namespace wise_api.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostBackNames(List<BackNamesDto> model)
+        public IActionResult PostBackNames(BackNamesDto model)
         {
-            List<BackNames> names = new List<BackNames>();
-
+            BackNames back = new BackNames();
+            back.Id= Guid.NewGuid().ToString();
+            back.Name= model.Name;
+  
             
-            _context.BackNames.AddRange(names);
+            _context.BackNames.Add(back);
             _context.SaveChanges();
-            return Ok(names);
+            return Ok("Se ha agragado a : "+back.Name);
 
         }
         [HttpPost("Server")]
@@ -67,21 +69,39 @@ namespace wise_api.Controllers
             return Ok(historyList);
 
         }
-        //[HttpPut("{id}")]
-        //public IActionResult PutBackNames(string id, [FromBody] ClienteDto model)
-        //{
+        [HttpPut("{id}")]
+        public IActionResult PutBackNames(string id, [FromBody] BackNamesDto model)
+        {
+
+            BackNames oldback = _context.BackNames.Find(id);
+           if (oldback == null)
+            {
+                return BadRequest("No existe el nombre");
+            }
+
+            oldback.Name = model.Name;
+
+            _context.SaveChanges();
+            return Ok("Se ha cambiado el nombre a : " + oldback.Name);
             
 
-        //    return Ok("Editado");
+        }
 
-        //}
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBakcNames(string id)
+        {
 
-        //[HttpDelete("{id}")]
-        //public IActionResult DeleteBakcNames(string id)
-        //{
-           
-        //    return Ok("Se ha eliminado el el nombre");
+            BackNames oldback = _context.BackNames.Find(id);
+            if (oldback == null)
+            {
+                return BadRequest("No existe el nombre");
+            }
 
-        //}
+            _context.BackNames.Remove(oldback);
+            _context.SaveChanges();
+            return Ok("Se ha eliminado a : " + oldback.Name);
+
+
+        }
     }
 }
